@@ -110,6 +110,7 @@ namespace SysPecNSLib
         }
         public static Usuario EfetuarLogin(string email, string senha)
         {
+            //usuario efetuar login
             Usuario usuario = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
@@ -132,14 +133,33 @@ namespace SysPecNSLib
         public void Atualizar()
         {
             // Atualizar dados do usuario
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_usuario_altera";
+            cmd.Parameters.AddWithValue("spid", Id);
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("spsenha", Senha);
+            cmd.Parameters.AddWithValue("spnivel", Nivel.Id);
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
-        public void Arquivar()
+        public static void Arquivar(int id)
         {
-
+            //deixar o usuario inativo
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update usuarios set ativo = 0 where id = {id}";
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
-        public void Restaurar()
+        public static void Restaurar(int id)
         {
-
+            //deixar usuario ativo
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update usuarios set ativo = 1 where id = {id}";
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
     }
 }
