@@ -1,0 +1,42 @@
+﻿using Google.Protobuf.WellKnownTypes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SysPecNSLib
+{
+    public class Cliente
+    {
+        public int Id { get; set; }
+        public string? Nome { get; set; }
+        public string? Telefone { get; set; }
+        public string? Email { get; set; }
+        public DateTime? Data_nasc { get; set; }
+        public Timestamp Data_cad { get; set; }
+        public bool Ativo { get; set; }
+        public Cliente()
+        {
+
+        }
+        public Cliente(int id, string? nome, string? telefone, string? email, DateTime? data_nasc, Timestamp data_cad, bool ativo)
+        {
+            Id = id;
+            Nome = nome;
+            Telefone = telefone;
+            Email = email;
+            Data_nasc = data_nasc;
+            Data_cad = data_cad;
+            Ativo = ativo;
+        }
+
+
+
+
+
+
+
+    }
+
+}
