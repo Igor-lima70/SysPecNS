@@ -19,7 +19,7 @@ namespace SysPecNSLib
         {
             Nivel = new();
         }
-        public Usuario( string? nome, string? email, string? senha, Nivel nivel)
+        public Usuario(string? nome, string? email, string? senha, Nivel nivel)
         {
             Nome = nome;
             Email = email;
@@ -85,12 +85,21 @@ namespace SysPecNSLib
             }
             return usuario;
         }
-        public static List<Usuario> ObterLista()
+        public static List<Usuario> ObterLista(string? nome="")
         {
             List<Usuario> lista = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from usuarios order by nome";
+            if (nome == "")
+            {
+                cmd.CommandText = "select * from usuarios order by nome";
+            }
+            else
+            {
+                cmd.CommandText = $"select * from usuarios where nome" + 
+                    $"like '%{nome}' %order by nome";
+            }
+            
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
