@@ -56,8 +56,6 @@ namespace SysPecNSDesk
             {
                 MessageBox.Show("Falha ao Grava Usuario!");
             }
-
-
         }
 
         private void txtBusca_TextChanged(object sender, EventArgs e)
@@ -89,5 +87,38 @@ namespace SysPecNSDesk
 
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (VerificaControles())
+            {
+                var msg = MessageBox.Show("Deseja continuar o formulário?", "Confirmação de saída", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                if (msg == DialogResult.No) this.Close();
+            }
+            else { this.Close(); }
+        }
+        private bool VerificaControles()
+        {
+            if (txtNome.Text != string.Empty
+                || txtEmail.Text != string.Empty
+                || txtConfSenha.Text != string.Empty)
+
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
+        
+
+       
+  
