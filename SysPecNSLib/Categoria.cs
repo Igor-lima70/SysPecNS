@@ -29,6 +29,7 @@ namespace SysPecNSLib
             Nome = nome;
             Sigla = sigla;
         }
+       
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -44,14 +45,14 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from categorias where id = {id}";
             var dr = cmd.ExecuteReader();
-            if (true)
+            if (dr.Read())
             {
-                categoria = new(dr.GetInt32(0), dr.GetString(1), dr.GetString(2));
+                categoria = new(dr.GetInt32(0), dr.GetString(1), null);
             }
 
             return categoria;
         }
-        public static List<Categoria> ObterLista(int id)
+        public static List<Categoria> ObterLista()
         {
             List<Categoria> categorias = new();
             var cmd = Banco.Abrir();
@@ -59,7 +60,7 @@ namespace SysPecNSLib
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                categorias.Add(new(dr.GetInt32(0), dr.GetString(1), dr.GetString(2)));
+                categorias.Add(new(dr.GetInt32(0), dr.GetString(1), null));
             }
 
             return categorias;
