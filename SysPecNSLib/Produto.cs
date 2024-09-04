@@ -20,7 +20,7 @@ namespace SysPecNSLib
         public double Estoque_minimo { get; set; }
         public double Classe_desconto { get; set; }
         public byte[]? Imagem { get; set; }
-        public DateTime Data_cad { get; set; }
+        public DateTime? Data_cad { get; set; }
 
         public Produto(string? cod_barras, string? descricao, double valor_unit, string? unidade_vendas, Categoria? categoria, double estoque_minimo, double classe_desconto)
         {
@@ -58,6 +58,19 @@ namespace SysPecNSLib
             Data_cad = data_cad;
         }
         public Produto(int id, string? cod_barras, string? descricao, double valor_unit, string? unidade_vendas, Categoria? categoria, double estoque_minimo, double classe_desconto, byte[]? imagem, DateTime data_cad)
+        {
+            Id = id;
+            Cod_barras = cod_barras;
+            Descricao = descricao;
+            Valor_unit = valor_unit;
+            Unidade_vendas = unidade_vendas;
+            Categoria = categoria;
+            Estoque_minimo = estoque_minimo;
+            Classe_desconto = classe_desconto;
+            Imagem = imagem;
+            Data_cad = data_cad;
+        }
+        public Produto(int id, string? cod_barras, string? descricao, double valor_unit, string? unidade_vendas, Categoria? categoria, double estoque_minimo, double classe_desconto, byte[]? imagem = null, DateTime? data_cad = null)
         {
             Id = id;
             Cod_barras = cod_barras;
@@ -119,7 +132,7 @@ namespace SysPecNSLib
                     Categoria.ObterPorId(dr.GetInt32(5)),
                     dr.GetDouble(6),
                     dr.GetDouble(7),
-                    (byte[])dr.GetValue(8),
+                    null,
                     dr.GetDateTime(9)                 
                     
                     );

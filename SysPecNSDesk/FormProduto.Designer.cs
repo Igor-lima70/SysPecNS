@@ -36,7 +36,7 @@
             lblCategoria = new Label();
             lblDesconto = new Label();
             txtDesconto = new TextBox();
-            nudEstoqMin = new NumericUpDown();
+            npEstoqMin = new NumericUpDown();
             lblDesc = new Label();
             lblEstoqMin = new Label();
             lblUnidVenda = new Label();
@@ -60,7 +60,7 @@
             Column9 = new DataGridViewTextBoxColumn();
             lblProdutos = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudEstoqMin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)npEstoqMin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             groupBox1.Controls.Add(lblCategoria);
             groupBox1.Controls.Add(lblDesconto);
             groupBox1.Controls.Add(txtDesconto);
-            groupBox1.Controls.Add(nudEstoqMin);
+            groupBox1.Controls.Add(npEstoqMin);
             groupBox1.Controls.Add(lblDesc);
             groupBox1.Controls.Add(lblEstoqMin);
             groupBox1.Controls.Add(lblUnidVenda);
@@ -100,15 +100,18 @@
             btnConsultar.TabIndex = 19;
             btnConsultar.Text = "&Consultar";
             btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // btnEditar
             // 
+            btnEditar.Enabled = false;
             btnEditar.Location = new Point(289, 203);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 24);
             btnEditar.TabIndex = 18;
             btnEditar.Text = "&Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAdicionar
             // 
@@ -153,12 +156,12 @@
             txtDesconto.Size = new Size(100, 23);
             txtDesconto.TabIndex = 12;
             // 
-            // nudEstoqMin
+            // npEstoqMin
             // 
-            nudEstoqMin.Location = new Point(457, 91);
-            nudEstoqMin.Name = "nudEstoqMin";
-            nudEstoqMin.Size = new Size(36, 23);
-            nudEstoqMin.TabIndex = 11;
+            npEstoqMin.Location = new Point(457, 91);
+            npEstoqMin.Name = "npEstoqMin";
+            npEstoqMin.Size = new Size(36, 23);
+            npEstoqMin.TabIndex = 11;
             // 
             // lblDesc
             // 
@@ -350,7 +353,7 @@
             Load += FormProduto_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudEstoqMin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)npEstoqMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -370,7 +373,7 @@
         private TextBox txtCodbar;
         private TextBox txtId;
         private Label lblDesc;
-        private NumericUpDown nudEstoqMin;
+        private NumericUpDown npEstoqMin;
         private ComboBox cmbCategoria;
         private Label lblCategoria;
         private Label lblDesconto;
