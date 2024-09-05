@@ -44,7 +44,85 @@ namespace SysPecNSLib
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_fornecedor_insert";
+            cmd.Parameters.AddWithValue("sprazao_social", Razao_social);
+            cmd.Parameters.AddWithValue("spfantasia", Fantasia);
+            cmd.Parameters.AddWithValue("spcnpj", CNPJ);
+            cmd.Parameters.AddWithValue("spcontato", Contato);
+            cmd.Parameters.AddWithValue("sptelefone", Telefone);
+            cmd.Parameters.AddWithValue("spemail", Email);
 
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+            }
+        }
+        public static Fornecedor ObterPorId (int id)
+        {
+            Fornecedor fornecedor = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from fornecedores where id = {id}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                fornecedor = new(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetString(5),
+                    dr.GetString(6)
+                    );
+            }
+            return fornecedor;
+        }
+        public static List<Fornecedor> ObterLista (string? razao_social = "")
+        {
+            List<Fornecedor> lista = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            if (razao_social == "")
+            {
+                cmd.CommandText = "select * from fornecedores order by razao_social";
+            }
+            else
+            {
+                cmd.CommandText = $"select * from fornecedores where razao_social" +
+                    $"like '%{razao_social}' %order by razao_social";
+            }
+
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(
+                    new(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetString(5),
+                    dr.GetString(6)
+                       )
+                    );
+            }
+            return lista;
+        }
+        public void Atualizar(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_fornecedor_update";
+            cmd.Parameters.AddWithValue("sprazao_social", Razao_social);
+            cmd.Parameters.AddWithValue("spfantasia", Fantasia);
+            cmd.Parameters.AddWithValue("spcontato", Contato);
+            cmd.Parameters.AddWithValue("sptelefone", Telefone);
+            cmd.Parameters.AddWithValue("spemail", Email);
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
     }
 }

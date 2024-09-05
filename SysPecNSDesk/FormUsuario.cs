@@ -111,13 +111,6 @@ namespace SysPecNSDesk
                 return false;
             }
         }
-
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-
-        }
     }
 }
         

@@ -67,7 +67,7 @@
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsuarios.Size = new Size(500, 150);
             dgvUsuarios.TabIndex = 10;
-            dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
+            
             // 
             // clnId
             // 
@@ -167,6 +167,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(256, 23);
             txtNome.TabIndex = 0;
+            
             // 
             // txtEmail
             // 
