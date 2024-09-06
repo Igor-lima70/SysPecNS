@@ -7,7 +7,7 @@ using System.Data;
 
 namespace SysPecNSLib
 {
-    /*public class Endereco
+    public class Endereco
     {
         public int Id { get; set; }
         public int Cliente_id { get; set; }
@@ -21,7 +21,7 @@ namespace SysPecNSLib
         public string? Tipo_endereco { get; set; }
         public Endereco()
         {
-            
+
         }
         public Endereco(string cep, string lougradouro, string numero, string complemento, string bairro, string cidade, string uf, string tipo_endereco)
         {
@@ -53,6 +53,7 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_enderecos_insert";
+            cmd.Parameters.AddWithValue("spcliente_id", Cliente_id);
             cmd.Parameters.AddWithValue("spcep", Cep);
             cmd.Parameters.AddWithValue("splougradouro", Lougradouro);
             cmd.Parameters.AddWithValue("spnumero", Numero);
@@ -63,7 +64,7 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("sptipo_endereco", Tipo_endereco);
 
             var dr = cmd.ExecuteReader();
-            while(dr.Read())
+            while (dr.Read())
             {
                 Id = dr.GetInt32(0);
             }
@@ -94,11 +95,31 @@ namespace SysPecNSLib
         }
         public static List<Endereco> ObterLista(string? nome = "")
         {
-            List<Cliente> lista = new();
+            List<Endereco> lista = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from enderecos order
+            cmd.CommandText = "select * from enderecos order by nome";
+
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(
+                    new(
+                        dr.GetInt32(0),
+                        dr.GetInt32(1),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6),
+                        dr.GetString(6),
+                        dr.GetString(8),
+                        dr.GetString(9)
+                        )
+                    );
+            }
+            return lista;
         }
 
-    }*/
+    }
 }
