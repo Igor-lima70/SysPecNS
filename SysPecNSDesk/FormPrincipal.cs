@@ -47,7 +47,6 @@ namespace SysPecNSDesk
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             FormLogin frmlogin = new();
-          //  frmlogin.MdiParent = this;
             frmlogin.ShowDialog();
             Text += $" ({Program.UsuarioLogado.Email})";
             toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Nome} - {Program.UsuarioLogado.Nivel.Nome}";
