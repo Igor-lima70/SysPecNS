@@ -20,20 +20,20 @@ namespace SysPecNSLib
         {
            
         }
-        public ItemPedido(int id, int idPedido, Produto produto, double valorUnit, double quantidade, double desconto)
+        public ItemPedido(int id, int idPedido, Produto produto, double ValorUnit, double quantidade, double desconto)
         {
             Id = id;
             IdPedido = idPedido;
             Produto = produto;
-            ValorUnit = valorUnit;
+            ValorUnit = ValorUnit;
             Quantidade = quantidade;
             Desconto = desconto;
         }
-        public ItemPedido(int idPedido, Produto produto, double valorUnit, double quantidade, double desconto)
+        public ItemPedido(int idPedido, Produto produto, double ValorUnit, double quantidade, double desconto)
         {
             IdPedido = idPedido;
             Produto = produto;
-            ValorUnit = valorUnit;
+            ValorUnit = ValorUnit;
             Quantidade = quantidade;
             Desconto = desconto;
         }
@@ -49,7 +49,7 @@ namespace SysPecNSLib
             Id = Convert.ToInt32(cmd.ExecuteScalar());
                     
         }
-        public List<ItemPedido> ObterListaPorPedido(int id)
+        public static List<ItemPedido> ObterListaPorPedido(int id)
         {
             List<ItemPedido> Itens = new();
             var cmd = Banco.Abrir();

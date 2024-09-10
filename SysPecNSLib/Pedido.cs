@@ -118,7 +118,7 @@ namespace SysPecNSLib
                     dr.GetString(4),
                     dr.GetDouble(5)
                     //[incluir lista de itens]
-                     
+                    , ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
                     ));
             }
             return pedidos;
@@ -165,7 +165,7 @@ namespace SysPecNSLib
                     dr.GetString(4),
                     dr.GetDouble(5)
                     //[incluir lista de itens]
-                    // ItemPedido.ObterListaPorPedido(dr.getint32(0))
+                    , ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
                     ));
             }
 
