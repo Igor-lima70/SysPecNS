@@ -34,6 +34,18 @@ namespace SysPecNSLib
             UF = uf;
             Tipo_endereco = tipo_endereco;
         }
+        public Endereco(int cliente_id, string cep, string lougradouro, string numero, string complemento, string bairro, string cidade, string uf, string tipo_endereco)
+        {
+            Cliente_id = cliente_id;
+            Cep = cep;
+            Lougradouro = lougradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            UF = uf;
+            Tipo_endereco = tipo_endereco;
+        }
         public Endereco(int id, int cliente_id, string cep, string lougradouro, string numero, string complemento, string bairro, string cidade, string uf, string tipo_endereco)
         {
             Id = id;
@@ -52,10 +64,10 @@ namespace SysPecNSLib
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_enderecos_insert";
+            cmd.CommandText = "sp_endereco_insert";
             cmd.Parameters.AddWithValue("spcliente_id", Cliente_id);
             cmd.Parameters.AddWithValue("spcep", Cep);
-            cmd.Parameters.AddWithValue("splougradouro", Lougradouro);
+            cmd.Parameters.AddWithValue("splogradouro", Lougradouro);
             cmd.Parameters.AddWithValue("spnumero", Numero);
             cmd.Parameters.AddWithValue("spcomplemento", Complemento);
             cmd.Parameters.AddWithValue("spbairro", Bairro);
@@ -93,12 +105,12 @@ namespace SysPecNSLib
             }
             return endereco;
         }
-        public static List<Endereco> ObterLista(string? nome = "")
+        public static List<Endereco> ObterLista(string cliente_id = "")
         {
             List<Endereco> lista = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from enderecos order by nome";
+            cmd.CommandText = "select * from enderecos order by cliente_id";
           
             var dr = cmd.ExecuteReader();
             while (dr.Read())
