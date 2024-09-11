@@ -27,18 +27,18 @@ namespace SysPecNSDesk
             Endereco endereco = new(
                 int.Parse(txtClienteID.Text),
                 txtCep.Text,
-                txtTipoEndereco.Text,
-                txtLougradouro.Text,
+                txtLogradouro.Text,
                 txtNumero.Text,
                 txtComplemento.Text,
                 txtBairro.Text,
                 txtCidade.Text,
-                txtUF.Text
+                txtUF.Text,
+                txtTipoEndereco.Text
                 );
             endereco.Inserir();
             if (endereco.Id > 0)
             {
-                MessageBox.Show($"Endereço foi inserido com sucesso com o ID ");
+                MessageBox.Show($"Endereço foi inserido com sucesso");
                 FormEndereco_Load(sender, e);
             }
             else
@@ -65,10 +65,11 @@ namespace SysPecNSDesk
             int cont = 0;
             foreach (var endereco in lista)
             {
+
                 dgvEndereco.Rows.Add();
                 dgvEndereco.Rows[cont].Cells[0].Value = endereco.Cliente_id;
                 dgvEndereco.Rows[cont].Cells[1].Value = endereco.Cep;
-                dgvEndereco.Rows[cont].Cells[2].Value = endereco.Lougradouro;
+                dgvEndereco.Rows[cont].Cells[2].Value = endereco.Logradouro;
                 dgvEndereco.Rows[cont].Cells[3].Value = endereco.Numero;
                 dgvEndereco.Rows[cont].Cells[4].Value = endereco.Complemento;
                 dgvEndereco.Rows[cont].Cells[5].Value = endereco.Bairro;
