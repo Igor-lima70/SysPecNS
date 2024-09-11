@@ -18,13 +18,13 @@ namespace SysPecNSLib
         public string? Telefone { get; set; }
         public string? Email { get; set; }
         public DateTime? Data_nasc { get; set; }
-        public DateTime? Data_cad { get;}
+        public DateTime? Data_cad { get; }
         public bool Ativo { get; set; }
         public Cliente()
         {
-            
+
         }
-        public Cliente(string? nome,string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad)
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad)
         {
             Nome = nome;
             Cpf = cpf;
@@ -33,7 +33,16 @@ namespace SysPecNSLib
             Data_nasc = data_nasc;
             Data_cad = data_cad;
         }
-        public Cliente(int id, string? nome,string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad, bool ativo)
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Telefone = telefone;
+            Email = email;
+            Data_nasc = data_nasc;
+
+        }
+        public Cliente(int id, string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad, bool ativo)
         {
             Id = id;
             Nome = nome;
@@ -53,7 +62,7 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcpf", Cpf);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
             cmd.Parameters.AddWithValue("spemail", Email);
-            cmd.Parameters.AddWithValue("spdata_nasc", Data_nasc);
+            cmd.Parameters.AddWithValue("spdatanasc", Data_nasc);
 
             var dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -91,11 +100,11 @@ namespace SysPecNSLib
             cmd.CommandType = CommandType.Text;
             if (nome == "")
             {
-                cmd.CommandText = "select * from usuarios order by nome";
+                cmd.CommandText = "select * from clientes order by nome";
             }
             else
             {
-                cmd.CommandText = $"select * from usuarios where nome" +
+                cmd.CommandText = $"select * from clientes where nome" +
                     $"like '%{nome}' %order by nome";
             }
 

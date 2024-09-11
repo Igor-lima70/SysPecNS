@@ -28,206 +28,266 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            groupBox1 = new GroupBox();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            txtTelefone = new TextBox();
+            txtCpf = new TextBox();
+            txtEmail = new TextBox();
+            txtId = new TextBox();
+            txtNome = new TextBox();
             lblId = new Label();
             lblNome = new Label();
             lblCpf = new Label();
             lblTelefone = new Label();
             lblEmail = new Label();
-            groupBox1.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            dtpDataNasc = new DateTimePicker();
+            lblDataNasc = new Label();
+            btnInserir = new Button();
+            dgvCliente = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            txtBusca = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             SuspendLayout();
             // 
-            // groupBox1
+            // txtTelefone
             // 
-            groupBox1.Controls.Add(tabControl1);
-            groupBox1.Location = new Point(97, 25);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(648, 387);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            txtTelefone.Location = new Point(352, 81);
+            txtTelefone.Margin = new Padding(3, 2, 3, 2);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(161, 23);
+            txtTelefone.TabIndex = 0;
             // 
-            // tabControl1
+            // txtCpf
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(52, 14);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(540, 367);
-            tabControl1.TabIndex = 0;
+            txtCpf.Location = new Point(181, 81);
+            txtCpf.Margin = new Padding(3, 2, 3, 2);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(158, 23);
+            txtCpf.TabIndex = 1;
             // 
-            // tabPage1
+            // txtEmail
             // 
-            tabPage1.Controls.Add(lblEmail);
-            tabPage1.Controls.Add(lblTelefone);
-            tabPage1.Controls.Add(lblCpf);
-            tabPage1.Controls.Add(lblNome);
-            tabPage1.Controls.Add(lblId);
-            tabPage1.Controls.Add(dateTimePicker1);
-            tabPage1.Controls.Add(textBox5);
-            tabPage1.Controls.Add(textBox4);
-            tabPage1.Controls.Add(textBox3);
-            tabPage1.Controls.Add(textBox2);
-            tabPage1.Controls.Add(textBox1);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(532, 339);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            txtEmail.Location = new Point(181, 129);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(178, 23);
+            txtEmail.TabIndex = 2;
             // 
-            // tabPage2
+            // txtId
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(532, 339);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            txtId.Location = new Point(181, 33);
+            txtId.Margin = new Padding(3, 2, 3, 2);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(61, 23);
+            txtId.TabIndex = 3;
             // 
-            // contextMenuStrip1
+            // txtNome
             // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(114, 38);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(44, 23);
-            textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(114, 146);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(157, 23);
-            textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(239, 91);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(154, 23);
-            textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(114, 91);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(119, 23);
-            textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(169, 38);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(224, 23);
-            textBox5.TabIndex = 4;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(288, 146);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(111, 23);
-            dateTimePicker1.TabIndex = 5;
+            txtNome.Location = new Point(251, 33);
+            txtNome.Margin = new Padding(3, 2, 3, 2);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(261, 23);
+            txtNome.TabIndex = 4;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(114, 20);
+            lblId.Location = new Point(181, 16);
             lblId.Name = "lblId";
             lblId.Size = new Size(18, 15);
-            lblId.TabIndex = 6;
+            lblId.TabIndex = 5;
             lblId.Text = "ID";
-            lblId.Click += label1_Click;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(169, 20);
+            lblNome.Location = new Point(251, 16);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(40, 15);
-            lblNome.TabIndex = 7;
+            lblNome.TabIndex = 6;
             lblNome.Text = "Nome";
             // 
             // lblCpf
             // 
             lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(114, 73);
+            lblCpf.Location = new Point(181, 64);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(28, 15);
-            lblCpf.TabIndex = 8;
+            lblCpf.TabIndex = 7;
             lblCpf.Text = "CPF";
             // 
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(239, 73);
+            lblTelefone.Location = new Point(352, 64);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(51, 15);
-            lblTelefone.TabIndex = 9;
+            lblTelefone.TabIndex = 8;
             lblTelefone.Text = "Telefone";
-            lblTelefone.Click += label4_Click;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(114, 128);
+            lblEmail.Location = new Point(181, 112);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
-            lblEmail.TabIndex = 10;
+            lblEmail.TabIndex = 9;
             lblEmail.Text = "Email";
+            // 
+            // dtpDataNasc
+            // 
+            dtpDataNasc.Location = new Point(373, 129);
+            dtpDataNasc.Margin = new Padding(3, 2, 3, 2);
+            dtpDataNasc.Name = "dtpDataNasc";
+            dtpDataNasc.Size = new Size(140, 23);
+            dtpDataNasc.TabIndex = 10;
+            // 
+            // lblDataNasc
+            // 
+            lblDataNasc.AutoSize = true;
+            lblDataNasc.Location = new Point(373, 112);
+            lblDataNasc.Name = "lblDataNasc";
+            lblDataNasc.Size = new Size(114, 15);
+            lblDataNasc.TabIndex = 11;
+            lblDataNasc.Text = "Data de Nascimento";
+            // 
+            // btnInserir
+            // 
+            btnInserir.Location = new Point(181, 165);
+            btnInserir.Margin = new Padding(3, 2, 3, 2);
+            btnInserir.Name = "btnInserir";
+            btnInserir.Size = new Size(79, 28);
+            btnInserir.TabIndex = 12;
+            btnInserir.Text = "&Inserir";
+            btnInserir.UseVisualStyleBackColor = true;
+            btnInserir.Click += btnInserir_Click_1;
+            // 
+            // dgvCliente
+            // 
+            dgvCliente.AllowUserToAddRows = false;
+            dgvCliente.AllowUserToDeleteRows = false;
+            dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dgvCliente.Location = new Point(64, 238);
+            dgvCliente.Margin = new Padding(3, 2, 3, 2);
+            dgvCliente.Name = "dgvCliente";
+            dgvCliente.ReadOnly = true;
+            dgvCliente.RowHeadersVisible = false;
+            dgvCliente.RowHeadersWidth = 51;
+            dgvCliente.Size = new Size(573, 178);
+            dgvCliente.TabIndex = 13;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Nome";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "CPF";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 130;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Telefone";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Email";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Data de Nascimento";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            Column6.Width = 180;
+            // 
+            // txtBusca
+            // 
+            txtBusca.Location = new Point(64, 207);
+            txtBusca.Margin = new Padding(3, 2, 3, 2);
+            txtBusca.Name = "txtBusca";
+            txtBusca.Size = new Size(574, 23);
+            txtBusca.TabIndex = 14;
             // 
             // FormCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(704, 444);
+            Controls.Add(txtBusca);
+            Controls.Add(btnInserir);
+            Controls.Add(lblDataNasc);
+            Controls.Add(dtpDataNasc);
+            Controls.Add(lblEmail);
+            Controls.Add(lblTelefone);
+            Controls.Add(lblCpf);
+            Controls.Add(lblNome);
+            Controls.Add(lblId);
+            Controls.Add(txtNome);
+            Controls.Add(txtId);
+            Controls.Add(txtEmail);
+            Controls.Add(txtCpf);
+            Controls.Add(txtTelefone);
+            Controls.Add(dgvCliente);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormCliente";
             Text = "FormCliente";
-            groupBox1.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            Load += FormCliente_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private ContextMenuStrip contextMenuStrip1;
-        private Label lblEmail;
-        private Label lblTelefone;
-        private Label lblCpf;
-        private Label lblNome;
+        private TextBox txtTelefone;
+        private TextBox txtCpf;
+        private TextBox txtEmail;
+        private TextBox txtId;
+        private TextBox txtNome;
         private Label lblId;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Label lblNome;
+        private Label lblCpf;
+        private Label lblTelefone;
+        private Label lblEmail;
+        private DateTimePicker dtpDataNasc;
+        private Label lblDataNasc;
+        private Button btnInserir;
+        private DataGridView dgvCliente;
+        private TextBox txtBusca;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
     }
 }
