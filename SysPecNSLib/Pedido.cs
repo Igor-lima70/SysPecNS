@@ -15,14 +15,14 @@ namespace SysPecNSLib
         public DateTime Data { get; set; }
         public string Status { get; set; }
         public double Desconto { get; set; }
-        public List<ItemPedido> Itens { get; set;}
+        public List<ItemPedido> Itens { get; set; }
         public Pedido()
         {
-            
+
         }
         public Pedido(Usuario usuario, Cliente cliente, DateTime data, string status, double desconto)
         {
-           
+
             Usuario = usuario;
             Cliente = cliente;
             Data = data;
@@ -58,10 +58,10 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_pedido_insert";
-            cmd.Parameters.AddWithValue("spcliente_id",Cliente.Id);
-            cmd.Parameters.AddWithValue("spusuario_id",Usuario.Id);
-            Id = Convert.ToInt32(cmd.ExecuteScalar);
-            
+            cmd.Parameters.AddWithValue("spusuario_id", Usuario.Id);
+            cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+
         }
         public void AlterarStatus()
         {
@@ -165,7 +165,7 @@ namespace SysPecNSLib
                     dr.GetString(4),
                     dr.GetDouble(5)
                     //[incluir lista de itens]
-                    , ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
+                    //, ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
                     ));
             }
 

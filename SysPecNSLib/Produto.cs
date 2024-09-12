@@ -143,7 +143,7 @@ namespace SysPecNSLib
         {
             Produto produto = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * from produtos where id = '{id}'";
+            cmd.CommandText = $"select * from produtos where cod_barras = '{id}'";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -178,7 +178,7 @@ namespace SysPecNSLib
                     Categoria.ObterPorId(dr.GetInt32(5)),
                     dr.GetDouble(6),
                     dr.GetDouble(7),
-                    (null),
+                    null,
                     dr.GetDateTime(9)
                     ));
             }

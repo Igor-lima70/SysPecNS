@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grbIdentificação = new GroupBox();
+            grbIdentificacao = new GroupBox();
             txtIdCliente = new TextBox();
             lblCliente = new Label();
             btnInserir = new Button();
@@ -36,7 +36,8 @@
             txtUsuario = new TextBox();
             label2 = new Label();
             grbItens = new GroupBox();
-            textBox9 = new TextBox();
+            label4 = new Label();
+            textBox1 = new TextBox();
             lblTotal = new Label();
             lblDesconto = new Label();
             lblQuantidade = new Label();
@@ -60,34 +61,34 @@
             label1 = new Label();
             lblNumero = new Label();
             txtIdPedido = new TextBox();
-            txtSubtotal = new TextBox();
+            txtSubTotal = new TextBox();
             txtDescontoItens = new TextBox();
-            txtDesconto = new TextBox();
+            txtDescontoPedido = new TextBox();
             btnFechar = new Button();
-            textBox13 = new TextBox();
+            txtTotal = new TextBox();
             lblSubTotal = new Label();
-            label4 = new Label();
+            label10 = new Label();
             label5 = new Label();
             label6 = new Label();
-            grbIdentificação.SuspendLayout();
+            grbIdentificacao.SuspendLayout();
             grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvItensPedido).BeginInit();
             SuspendLayout();
             // 
-            // grbIdentificação
+            // grbIdentificacao
             // 
-            grbIdentificação.Controls.Add(txtIdCliente);
-            grbIdentificação.Controls.Add(lblCliente);
-            grbIdentificação.Controls.Add(btnInserir);
-            grbIdentificação.Controls.Add(textBox3);
-            grbIdentificação.Controls.Add(txtUsuario);
-            grbIdentificação.Controls.Add(label2);
-            grbIdentificação.Location = new Point(131, 73);
-            grbIdentificação.Name = "grbIdentificação";
-            grbIdentificação.Size = new Size(527, 187);
-            grbIdentificação.TabIndex = 0;
-            grbIdentificação.TabStop = false;
-            grbIdentificação.Text = "Identificação";
+            grbIdentificacao.Controls.Add(txtIdCliente);
+            grbIdentificacao.Controls.Add(lblCliente);
+            grbIdentificacao.Controls.Add(btnInserir);
+            grbIdentificacao.Controls.Add(textBox3);
+            grbIdentificacao.Controls.Add(txtUsuario);
+            grbIdentificacao.Controls.Add(label2);
+            grbIdentificacao.Location = new Point(131, 73);
+            grbIdentificacao.Name = "grbIdentificacao";
+            grbIdentificacao.Size = new Size(527, 187);
+            grbIdentificacao.TabIndex = 0;
+            grbIdentificacao.TabStop = false;
+            grbIdentificacao.Text = "Identificação";
             // 
             // txtIdCliente
             // 
@@ -143,7 +144,8 @@
             // 
             // grbItens
             // 
-            grbItens.Controls.Add(textBox9);
+            grbItens.Controls.Add(label4);
+            grbItens.Controls.Add(textBox1);
             grbItens.Controls.Add(lblTotal);
             grbItens.Controls.Add(lblDesconto);
             grbItens.Controls.Add(lblQuantidade);
@@ -165,12 +167,24 @@
             grbItens.TabStop = false;
             grbItens.Text = "Itens de Pedido";
             // 
-            // textBox9
+            // label4
             // 
-            textBox9.Location = new Point(461, 289);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(100, 23);
-            textBox9.TabIndex = 13;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(430, 64);
+            label4.Name = "label4";
+            label4.Size = new Size(23, 17);
+            label4.TabIndex = 14;
+            label4.Tag = "";
+            label4.Text = "R$";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(461, 289);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 13;
             // 
             // lblTotal
             // 
@@ -368,18 +382,20 @@
             // 
             // txtIdPedido
             // 
+            txtIdPedido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtIdPedido.Location = new Point(651, 30);
             txtIdPedido.Name = "txtIdPedido";
-            txtIdPedido.Size = new Size(100, 23);
+            txtIdPedido.ReadOnly = true;
+            txtIdPedido.Size = new Size(100, 29);
             txtIdPedido.TabIndex = 4;
             // 
-            // txtSubtotal
+            // txtSubTotal
             // 
-            txtSubtotal.Location = new Point(688, 356);
-            txtSubtotal.Name = "txtSubtotal";
-            txtSubtotal.ReadOnly = true;
-            txtSubtotal.Size = new Size(100, 23);
-            txtSubtotal.TabIndex = 5;
+            txtSubTotal.Location = new Point(688, 356);
+            txtSubTotal.Name = "txtSubTotal";
+            txtSubTotal.ReadOnly = true;
+            txtSubTotal.Size = new Size(100, 23);
+            txtSubTotal.TabIndex = 5;
             // 
             // txtDescontoItens
             // 
@@ -389,12 +405,13 @@
             txtDescontoItens.Size = new Size(100, 23);
             txtDescontoItens.TabIndex = 6;
             // 
-            // txtDesconto
+            // txtDescontoPedido
             // 
-            txtDesconto.Location = new Point(688, 464);
-            txtDesconto.Name = "txtDesconto";
-            txtDesconto.Size = new Size(100, 23);
-            txtDesconto.TabIndex = 7;
+            txtDescontoPedido.Location = new Point(688, 464);
+            txtDescontoPedido.Name = "txtDescontoPedido";
+            txtDescontoPedido.Size = new Size(100, 23);
+            txtDescontoPedido.TabIndex = 7;
+            txtDescontoPedido.TextChanged += txtDescontoPedido_TextChanged;
             // 
             // btnFechar
             // 
@@ -404,14 +421,15 @@
             btnFechar.TabIndex = 9;
             btnFechar.Text = "&Fechar";
             btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
             // 
-            // textBox13
+            // txtTotal
             // 
-            textBox13.Location = new Point(688, 518);
-            textBox13.Name = "textBox13";
-            textBox13.ReadOnly = true;
-            textBox13.Size = new Size(100, 23);
-            textBox13.TabIndex = 8;
+            txtTotal.Location = new Point(688, 518);
+            txtTotal.Name = "txtTotal";
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(100, 23);
+            txtTotal.TabIndex = 8;
             // 
             // lblSubTotal
             // 
@@ -422,14 +440,14 @@
             lblSubTotal.TabIndex = 10;
             lblSubTotal.Text = "Sub Total";
             // 
-            // label4
+            // label10
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(688, 397);
-            label4.Name = "label4";
-            label4.Size = new Size(85, 15);
-            label4.TabIndex = 11;
-            label4.Text = "Desconto Itens";
+            label10.AutoSize = true;
+            label10.Location = new Point(688, 397);
+            label10.Name = "label10";
+            label10.Size = new Size(85, 15);
+            label10.TabIndex = 11;
+            label10.Text = "Desconto Itens";
             // 
             // label5
             // 
@@ -456,23 +474,23 @@
             ClientSize = new Size(811, 619);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(label4);
+            Controls.Add(label10);
             Controls.Add(lblSubTotal);
             Controls.Add(btnFechar);
-            Controls.Add(textBox13);
-            Controls.Add(txtDesconto);
+            Controls.Add(txtTotal);
+            Controls.Add(txtDescontoPedido);
             Controls.Add(txtDescontoItens);
-            Controls.Add(txtSubtotal);
+            Controls.Add(txtSubTotal);
             Controls.Add(txtIdPedido);
             Controls.Add(lblNumero);
             Controls.Add(label1);
             Controls.Add(grbItens);
-            Controls.Add(grbIdentificação);
+            Controls.Add(grbIdentificacao);
             Name = "FormPedido";
             Text = "FormPedido";
             Load += FormPedido_Load;
-            grbIdentificação.ResumeLayout(false);
-            grbIdentificação.PerformLayout();
+            grbIdentificacao.ResumeLayout(false);
+            grbIdentificacao.PerformLayout();
             grbItens.ResumeLayout(false);
             grbItens.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvItensPedido).EndInit();
@@ -482,7 +500,7 @@
 
         #endregion
 
-        private GroupBox grbIdentificação;
+        private GroupBox grbIdentificacao;
         private GroupBox grbItens;
         private Label label1;
         private TextBox txtUsuario;
@@ -505,15 +523,15 @@
         private Label lblValorUnit;
         private Label lblDescricao;
         private Label lblCodbarras;
-        private TextBox textBox9;
+        private TextBox textBox1;
         private Label lblTotal;
-        private TextBox txtSubtotal;
+        private TextBox txtSubTotal;
         private TextBox txtDescontoItens;
-        private TextBox txtDesconto;
+        private TextBox txtDescontoPedido;
         private Button btnFechar;
-        private TextBox textBox13;
+        private TextBox txtTotal;
         private Label lblSubTotal;
-        private Label label4;
+        private Label label10;
         private Label label5;
         private Label label6;
         private DataGridViewTextBoxColumn clnSeq;
@@ -523,5 +541,6 @@
         private DataGridViewTextBoxColumn clnQuantidade;
         private DataGridViewTextBoxColumn clnDescontoItem;
         private DataGridViewTextBoxColumn clnTotalItem;
+        private Label label4;
     }
 }

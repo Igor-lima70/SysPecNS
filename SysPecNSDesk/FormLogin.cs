@@ -20,7 +20,7 @@ namespace SysPecNSDesk
         private void btnLogar_Click(object sender, EventArgs e)
         {
             if (txtEmail.Text != string.Empty && txtSenha.Text != string.Empty)
-            { 
+            {
                 var usuario = Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
                 if (usuario.Id > 0)
                 {
@@ -49,6 +49,17 @@ namespace SysPecNSDesk
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            txtEmail.Text = "paulo@gmail.com";
+            txtSenha.Text = "123456";
         }
     }
 }

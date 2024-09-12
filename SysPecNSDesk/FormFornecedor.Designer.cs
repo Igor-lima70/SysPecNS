@@ -48,18 +48,13 @@
             txtId = new TextBox();
             txtTelefone = new TextBox();
             txtRazao_social = new TextBox();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
             lblEmail = new Label();
             txtEmail = new TextBox();
             textBox1 = new TextBox();
             btnConsultar = new Button();
             btnInserir = new Button();
             btnEditar = new Button();
-            tabPage2 = new TabPage();
             ((System.ComponentModel.ISupportInitialize)dgvFornecedor).BeginInit();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvFornecedor
@@ -68,7 +63,7 @@
             dgvFornecedor.AllowUserToDeleteRows = false;
             dgvFornecedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFornecedor.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
-            dgvFornecedor.Location = new Point(95, 263);
+            dgvFornecedor.Location = new Point(56, 257);
             dgvFornecedor.Name = "dgvFornecedor";
             dgvFornecedor.ReadOnly = true;
             dgvFornecedor.RowHeadersVisible = false;
@@ -122,7 +117,7 @@
             // lblRazao_social
             // 
             lblRazao_social.AutoSize = true;
-            lblRazao_social.Location = new Point(181, 36);
+            lblRazao_social.Location = new Point(142, 30);
             lblRazao_social.Name = "lblRazao_social";
             lblRazao_social.Size = new Size(74, 15);
             lblRazao_social.TabIndex = 8;
@@ -131,7 +126,7 @@
             // lblFantasia
             // 
             lblFantasia.AutoSize = true;
-            lblFantasia.Location = new Point(365, 36);
+            lblFantasia.Location = new Point(326, 30);
             lblFantasia.Name = "lblFantasia";
             lblFantasia.Size = new Size(50, 15);
             lblFantasia.TabIndex = 9;
@@ -140,7 +135,7 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(95, 36);
+            lblId.Location = new Point(56, 30);
             lblId.Name = "lblId";
             lblId.Size = new Size(18, 15);
             lblId.TabIndex = 7;
@@ -149,7 +144,7 @@
             // lblCnpj
             // 
             lblCnpj.AutoSize = true;
-            lblCnpj.Location = new Point(95, 98);
+            lblCnpj.Location = new Point(56, 92);
             lblCnpj.Name = "lblCnpj";
             lblCnpj.Size = new Size(34, 15);
             lblCnpj.TabIndex = 10;
@@ -157,7 +152,7 @@
             // 
             // txtContato
             // 
-            txtContato.Location = new Point(216, 116);
+            txtContato.Location = new Point(177, 110);
             txtContato.Name = "txtContato";
             txtContato.Size = new Size(130, 23);
             txtContato.TabIndex = 4;
@@ -165,7 +160,7 @@
             // lblContato
             // 
             lblContato.AutoSize = true;
-            lblContato.Location = new Point(216, 98);
+            lblContato.Location = new Point(177, 92);
             lblContato.Name = "lblContato";
             lblContato.Size = new Size(50, 15);
             lblContato.TabIndex = 11;
@@ -173,7 +168,7 @@
             // 
             // txtCnpj
             // 
-            txtCnpj.Location = new Point(95, 116);
+            txtCnpj.Location = new Point(56, 110);
             txtCnpj.Name = "txtCnpj";
             txtCnpj.Size = new Size(100, 23);
             txtCnpj.TabIndex = 3;
@@ -181,7 +176,7 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(364, 98);
+            lblTelefone.Location = new Point(325, 92);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(51, 15);
             lblTelefone.TabIndex = 12;
@@ -189,14 +184,14 @@
             // 
             // txtFantasia
             // 
-            txtFantasia.Location = new Point(365, 54);
+            txtFantasia.Location = new Point(326, 48);
             txtFantasia.Name = "txtFantasia";
             txtFantasia.Size = new Size(174, 23);
             txtFantasia.TabIndex = 2;
             // 
             // txtId
             // 
-            txtId.Location = new Point(95, 54);
+            txtId.Location = new Point(56, 48);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(56, 23);
@@ -204,61 +199,22 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(365, 116);
+            txtTelefone.Location = new Point(326, 110);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(174, 23);
             txtTelefone.TabIndex = 6;
             // 
             // txtRazao_social
             // 
-            txtRazao_social.Location = new Point(181, 54);
+            txtRazao_social.Location = new Point(142, 48);
             txtRazao_social.Name = "txtRazao_social";
             txtRazao_social.Size = new Size(165, 23);
             txtRazao_social.TabIndex = 1;
             // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(96, 12);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(632, 483);
-            tabControl1.TabIndex = 14;
-            // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(lblEmail);
-            tabPage1.Controls.Add(txtEmail);
-            tabPage1.Controls.Add(textBox1);
-            tabPage1.Controls.Add(btnConsultar);
-            tabPage1.Controls.Add(dgvFornecedor);
-            tabPage1.Controls.Add(btnInserir);
-            tabPage1.Controls.Add(btnEditar);
-            tabPage1.Controls.Add(txtTelefone);
-            tabPage1.Controls.Add(txtRazao_social);
-            tabPage1.Controls.Add(txtContato);
-            tabPage1.Controls.Add(lblContato);
-            tabPage1.Controls.Add(lblCnpj);
-            tabPage1.Controls.Add(txtId);
-            tabPage1.Controls.Add(txtCnpj);
-            tabPage1.Controls.Add(lblId);
-            tabPage1.Controls.Add(lblFantasia);
-            tabPage1.Controls.Add(txtFantasia);
-            tabPage1.Controls.Add(lblTelefone);
-            tabPage1.Controls.Add(lblRazao_social);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(624, 455);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(95, 149);
+            lblEmail.Location = new Point(56, 143);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 18;
@@ -266,14 +222,14 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(95, 167);
+            txtEmail.Location = new Point(56, 161);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(150, 23);
             txtEmail.TabIndex = 17;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(94, 220);
+            textBox1.Location = new Point(55, 214);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(444, 23);
             textBox1.TabIndex = 16;
@@ -281,7 +237,7 @@
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(463, 161);
+            btnConsultar.Location = new Point(424, 155);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(75, 32);
             btnConsultar.TabIndex = 15;
@@ -291,7 +247,7 @@
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(271, 161);
+            btnInserir.Location = new Point(232, 155);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(75, 32);
             btnInserir.TabIndex = 14;
@@ -301,37 +257,43 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(367, 161);
+            btnEditar.Location = new Point(328, 155);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 32);
             btnEditar.TabIndex = 13;
             btnEditar.Text = "&Editar";
             btnEditar.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(624, 474);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
             // FormFornecedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(849, 523);
-            Controls.Add(tabControl1);
+            ClientSize = new Size(550, 470);
+            Controls.Add(lblEmail);
+            Controls.Add(txtEmail);
+            Controls.Add(dgvFornecedor);
+            Controls.Add(textBox1);
+            Controls.Add(lblRazao_social);
+            Controls.Add(btnConsultar);
+            Controls.Add(lblTelefone);
+            Controls.Add(txtFantasia);
+            Controls.Add(btnInserir);
+            Controls.Add(lblFantasia);
+            Controls.Add(btnEditar);
+            Controls.Add(lblId);
+            Controls.Add(txtTelefone);
+            Controls.Add(txtCnpj);
+            Controls.Add(txtRazao_social);
+            Controls.Add(txtId);
+            Controls.Add(txtContato);
+            Controls.Add(lblCnpj);
+            Controls.Add(lblContato);
             Name = "FormFornecedor";
             Text = "FormFornecedor";
             Load += FormFornecedor_Load;
             ((System.ComponentModel.ISupportInitialize)dgvFornecedor).EndInit();
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -348,9 +310,6 @@
         private TextBox txtId;
         private TextBox txtTelefone;
         private TextBox txtRazao_social;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
         private Button btnConsultar;
         private Button btnInserir;
         private Button btnEditar;

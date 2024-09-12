@@ -83,5 +83,12 @@ namespace SysPecNSDesk
                 MessageBox.Show("Falha ao Grava Cliente!");
             }
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            FormEndereco formendereco = new();
+            formendereco.MdiParent = this;
+            formendereco.Show();
+        }
     }
 }

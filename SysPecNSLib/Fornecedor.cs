@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using Mysqlx.Connection;
 
 namespace SysPecNSLib
 {
@@ -32,6 +33,14 @@ namespace SysPecNSLib
             Razao_social = razao_social;
             Fantasia = fantasia;
             CNPJ = cnpj;
+            Contato = contato;
+            Telefone = telefone;
+            Email = email;
+        }
+        public Fornecedor(string? razao_social, string? fantasia, string? contato, string? telefone, string? email)
+        {
+            Razao_social = razao_social;
+            Fantasia = fantasia;
             Contato = contato;
             Telefone = telefone;
             Email = email;
@@ -91,7 +100,7 @@ namespace SysPecNSLib
             else
             {
                 cmd.CommandText = $"select * from fornecedores where razao_social" +
-                    $"like '%{razao_social}' %order by razao_social";
+                    $"like '%{razao_social}%' order by razao_social";
             }
 
             var dr = cmd.ExecuteReader();
@@ -109,6 +118,7 @@ namespace SysPecNSLib
                        )
                     );
             }
+            cmd.Connection.Close();
             return lista;
         }
         public void Atualizar(int id)

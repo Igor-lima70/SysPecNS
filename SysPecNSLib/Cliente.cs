@@ -75,7 +75,7 @@ namespace SysPecNSLib
             Cliente cliente = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from clientes where id {id}";
+            cmd.CommandText = $"select * from clientes where id = {id}";
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {

@@ -33,9 +33,8 @@ namespace SysPecNSLib
             Cidade = cidade;
             UF = uf;
             Tipo_endereco = tipo_endereco;
-
         }
-        public Endereco(int cliente_id, string cep ,  string logradouro, string numero, string complemento, string bairro, string cidade, string uf, string tipo_endereco)
+        public Endereco(int cliente_id, string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string uf, string tipo_endereco)
         {
             Cliente_id = cliente_id;
             Cep = cep;
@@ -46,12 +45,11 @@ namespace SysPecNSLib
             Cidade = cidade;
             UF = uf;
             Tipo_endereco = tipo_endereco;
-
         }
         public Endereco(int id, int cliente_id, string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string uf, string tipo_endereco)
         {
             Id = id;
-            Cliente_id = cliente_id; 
+            Cliente_id = cliente_id;
             Cep = cep;
             Logradouro = logradouro;
             Numero = numero;
@@ -60,7 +58,6 @@ namespace SysPecNSLib
             Cidade = cidade;
             UF = uf;
             Tipo_endereco = tipo_endereco;
-
         }
         //inserir endereço do cliente
         public void Inserir()
@@ -77,7 +74,6 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcidade", Cidade);
             cmd.Parameters.AddWithValue("spuf", UF);
             cmd.Parameters.AddWithValue("sptipo_endereco", Tipo_endereco);
-
 
             var dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -128,7 +124,7 @@ namespace SysPecNSLib
                         dr.GetString(4),
                         dr.GetString(5),
                         dr.GetString(6),
-                        dr.GetString(6),
+                        dr.GetString(7),
                         dr.GetString(8),
                         dr.GetString(9)
                         )

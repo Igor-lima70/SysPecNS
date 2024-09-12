@@ -81,6 +81,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(198, 23);
             txtEmail.TabIndex = 4;
+       
             // 
             // txtSenha
             // 
@@ -117,6 +118,7 @@
             Controls.Add(btnLogar);
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

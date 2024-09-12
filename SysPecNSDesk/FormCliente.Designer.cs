@@ -54,7 +54,7 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(352, 81);
+            txtTelefone.Location = new Point(300, 107);
             txtTelefone.Margin = new Padding(3, 2, 3, 2);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(161, 23);
@@ -62,7 +62,7 @@
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(181, 81);
+            txtCpf.Location = new Point(129, 107);
             txtCpf.Margin = new Padding(3, 2, 3, 2);
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(158, 23);
@@ -70,7 +70,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(181, 129);
+            txtEmail.Location = new Point(129, 155);
             txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(178, 23);
@@ -78,7 +78,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(181, 33);
+            txtId.Location = new Point(129, 59);
             txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
@@ -87,7 +87,7 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(251, 33);
+            txtNome.Location = new Point(199, 59);
             txtNome.Margin = new Padding(3, 2, 3, 2);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(261, 23);
@@ -96,7 +96,7 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(181, 16);
+            lblId.Location = new Point(129, 42);
             lblId.Name = "lblId";
             lblId.Size = new Size(18, 15);
             lblId.TabIndex = 5;
@@ -105,7 +105,7 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(251, 16);
+            lblNome.Location = new Point(199, 42);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(40, 15);
             lblNome.TabIndex = 6;
@@ -114,7 +114,7 @@
             // lblCpf
             // 
             lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(181, 64);
+            lblCpf.Location = new Point(129, 90);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(28, 15);
             lblCpf.TabIndex = 7;
@@ -123,7 +123,7 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(352, 64);
+            lblTelefone.Location = new Point(300, 90);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(51, 15);
             lblTelefone.TabIndex = 8;
@@ -132,7 +132,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(181, 112);
+            lblEmail.Location = new Point(129, 138);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 9;
@@ -140,7 +140,7 @@
             // 
             // dtpDataNasc
             // 
-            dtpDataNasc.Location = new Point(373, 129);
+            dtpDataNasc.Location = new Point(321, 155);
             dtpDataNasc.Margin = new Padding(3, 2, 3, 2);
             dtpDataNasc.Name = "dtpDataNasc";
             dtpDataNasc.Size = new Size(140, 23);
@@ -149,7 +149,7 @@
             // lblDataNasc
             // 
             lblDataNasc.AutoSize = true;
-            lblDataNasc.Location = new Point(373, 112);
+            lblDataNasc.Location = new Point(321, 138);
             lblDataNasc.Name = "lblDataNasc";
             lblDataNasc.Size = new Size(114, 15);
             lblDataNasc.TabIndex = 11;
@@ -157,7 +157,7 @@
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(181, 165);
+            btnInserir.Location = new Point(129, 191);
             btnInserir.Margin = new Padding(3, 2, 3, 2);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(79, 28);
@@ -172,7 +172,7 @@
             dgvCliente.AllowUserToDeleteRows = false;
             dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCliente.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dgvCliente.Location = new Point(64, 238);
+            dgvCliente.Location = new Point(12, 260);
             dgvCliente.Margin = new Padding(3, 2, 3, 2);
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
@@ -231,7 +231,7 @@
             // 
             // txtBusca
             // 
-            txtBusca.Location = new Point(64, 207);
+            txtBusca.Location = new Point(11, 233);
             txtBusca.Margin = new Padding(3, 2, 3, 2);
             txtBusca.Name = "txtBusca";
             txtBusca.Size = new Size(574, 23);
@@ -241,22 +241,22 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(704, 444);
+            ClientSize = new Size(611, 471);
+            Controls.Add(dgvCliente);
+            Controls.Add(txtId);
             Controls.Add(txtBusca);
-            Controls.Add(btnInserir);
-            Controls.Add(lblDataNasc);
+            Controls.Add(txtCpf);
             Controls.Add(dtpDataNasc);
-            Controls.Add(lblEmail);
             Controls.Add(lblTelefone);
-            Controls.Add(lblCpf);
             Controls.Add(lblNome);
             Controls.Add(lblId);
-            Controls.Add(txtNome);
-            Controls.Add(txtId);
-            Controls.Add(txtEmail);
-            Controls.Add(txtCpf);
+            Controls.Add(lblEmail);
+            Controls.Add(lblDataNasc);
             Controls.Add(txtTelefone);
-            Controls.Add(dgvCliente);
+            Controls.Add(btnInserir);
+            Controls.Add(txtEmail);
+            Controls.Add(txtNome);
+            Controls.Add(lblCpf);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormCliente";
             Text = "FormCliente";

@@ -51,5 +51,32 @@ namespace SysPecNSDesk
             Text += $" ({Program.UsuarioLogado.Email})";
             toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Nome} - {Program.UsuarioLogado.Nivel.Nome}";
         }
+        private void novoToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FormPedido formpedido = new();
+            formpedido.MdiParent = this;
+            formpedido.Show();
+        }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCliente formcliente = new();
+            formcliente.MdiParent = this;
+            formcliente.Show();
+        }
+
+        private void endereçoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEndereco formendereco = new();
+            formendereco.MdiParent = this;
+            formendereco.Show();
+        }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFornecedor formfornecedor = new();
+            formfornecedor.MdiParent = this;
+            formfornecedor.Show();
+        }
     }
 }
