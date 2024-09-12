@@ -18,22 +18,22 @@ namespace SysPecNSLib
         public double Desconto { get; set; }
         public ItemPedido()
         {
-           
+
         }
-        public ItemPedido(int id, int idPedido, Produto produto, double valorUnit, double quantidade, double desconto)
+        public ItemPedido(int id, int idPedido, Produto produto, double ValorUnit, double quantidade, double desconto)
         {
             Id = id;
             IdPedido = idPedido;
             Produto = produto;
-            ValorUnit = valorUnit;
+            ValorUnit = ValorUnit;
             Quantidade = quantidade;
             Desconto = desconto;
         }
-        public ItemPedido(int idPedido, Produto produto, double valorUnit, double quantidade, double desconto)
+        public ItemPedido(int idPedido, Produto produto, double ValorUnit, double quantidade, double desconto)
         {
             IdPedido = idPedido;
             Produto = produto;
-            ValorUnit = valorUnit;
+            ValorUnit = ValorUnit;
             Quantidade = quantidade;
             Desconto = desconto;
         }
@@ -42,12 +42,12 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_itempedido_insert";
-            cmd.Parameters.AddWithValue("sppedido_id", IdPedido);
-            cmd.Parameters.AddWithValue("spproduto_id", Produto.Id);
+            cmd.Parameters.AddWithValue("sppedidoid", IdPedido);
+            cmd.Parameters.AddWithValue("spprodutoid", Produto.Id);
             cmd.Parameters.AddWithValue("spquantidade", Quantidade);
             cmd.Parameters.AddWithValue("spdesconto", Desconto);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
-                    
+
         }
         public static List<ItemPedido> ObterListaPorPedido(int id)
         {
@@ -74,8 +74,8 @@ namespace SysPecNSLib
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_itempedido_update";
             cmd.Parameters.AddWithValue("spid", Id);
-            cmd.Parameters.AddWithValue("spquantidade",Quantidade);
-            cmd.Parameters.AddWithValue("spdesconto",Desconto);
+            cmd.Parameters.AddWithValue("spquantidade", Quantidade);
+            cmd.Parameters.AddWithValue("spdesconto", Desconto);
             cmd.ExecuteNonQuery();
         }
     }

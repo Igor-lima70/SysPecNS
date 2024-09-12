@@ -34,6 +34,8 @@ namespace SysPecNSDesk
                 txtCidade.Text,
                 txtUF.Text,
                 txtTipoEndereco.Text
+
+
                 );
             endereco.Inserir();
             if (endereco.Id > 0)
@@ -47,17 +49,7 @@ namespace SysPecNSDesk
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (txtBusca.Text.Length > 0)
-            {
-                CarregaGrid(txtBusca.Text);
-            }
-            else
-            {
-                CarregaGrid();
-            }
-        }
+        
         private void CarregaGrid(string cliente_id = "")
         {
             var lista = Endereco.ObterLista(cliente_id);
@@ -69,15 +61,26 @@ namespace SysPecNSDesk
                 dgvEndereco.Rows.Add();
                 dgvEndereco.Rows[cont].Cells[0].Value = endereco.Cliente_id;
                 dgvEndereco.Rows[cont].Cells[1].Value = endereco.Cep;
-                dgvEndereco.Rows[cont].Cells[2].Value = endereco.Logradouro;
-                dgvEndereco.Rows[cont].Cells[3].Value = endereco.Numero;
-                dgvEndereco.Rows[cont].Cells[4].Value = endereco.Complemento;
-                dgvEndereco.Rows[cont].Cells[5].Value = endereco.Bairro;
-                dgvEndereco.Rows[cont].Cells[6].Value = endereco.Cidade;
-                dgvEndereco.Rows[cont].Cells[7].Value = endereco.UF;
-                dgvEndereco.Rows[cont].Cells[8].Value = endereco.Tipo_endereco;
+                dgvEndereco.Rows[cont].Cells[2].Value = endereco.Tipo_endereco;
+                dgvEndereco.Rows[cont].Cells[3].Value = endereco.Logradouro;
+                dgvEndereco.Rows[cont].Cells[4].Value = endereco.Numero;
+                dgvEndereco.Rows[cont].Cells[5].Value = endereco.Complemento;
+                dgvEndereco.Rows[cont].Cells[6].Value = endereco.Bairro;
+                dgvEndereco.Rows[cont].Cells[7].Value = endereco.Cidade;
+                dgvEndereco.Rows[cont].Cells[8].Value = endereco.UF;
 
                 cont++;
+            }
+        }
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusca.Text.Length > 0)
+            {
+                CarregaGrid(txtBusca.Text);
+            }
+            else
+            {
+                CarregaGrid();
             }
         }
     }

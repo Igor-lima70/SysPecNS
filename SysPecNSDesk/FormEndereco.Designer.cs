@@ -48,7 +48,6 @@
             label9 = new Label();
             btnInserir = new Button();
             dgvEndereco = new DataGridView();
-            txtBusca = new TextBox();
             clnClienteID = new DataGridViewTextBoxColumn();
             clnCep = new DataGridViewTextBoxColumn();
             clnTipoEndereco = new DataGridViewTextBoxColumn();
@@ -58,6 +57,7 @@
             clnBairro = new DataGridViewTextBoxColumn();
             clnCidade = new DataGridViewTextBoxColumn();
             clnUF = new DataGridViewTextBoxColumn();
+            txtBusca = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvEndereco).BeginInit();
             SuspendLayout();
             // 
@@ -229,14 +229,6 @@
             dgvEndereco.Size = new Size(610, 225);
             dgvEndereco.TabIndex = 22;
             // 
-            // txtBusca
-            // 
-            txtBusca.Location = new Point(93, 251);
-            txtBusca.Name = "txtBusca";
-            txtBusca.Size = new Size(610, 27);
-            txtBusca.TabIndex = 21;
-            txtBusca.TextChanged += textBox1_TextChanged;
-            // 
             // clnClienteID
             // 
             clnClienteID.HeaderText = "Cliente ID";
@@ -308,6 +300,14 @@
             clnUF.Name = "clnUF";
             clnUF.ReadOnly = true;
             clnUF.Width = 125;
+            // 
+            // txtBusca
+            // 
+            txtBusca.Location = new Point(93, 251);
+            txtBusca.Name = "txtBusca";
+            txtBusca.Size = new Size(610, 27);
+            txtBusca.TabIndex = 21;
+            txtBusca.TextChanged += txtBusca_TextChanged;
             // 
             // FormEndereco
             // 
