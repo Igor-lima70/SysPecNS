@@ -23,6 +23,11 @@ namespace SysPecNSLib
             Quantidade = quantidade;
             Data_Ultimo_Movimento = data_Ultimo_Movimento;
         }
+        public Estoque(int produto_id, double quantidade)
+        {
+            Produto_id = produto_id;
+            Quantidade = quantidade;
+        }
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -30,6 +35,21 @@ namespace SysPecNSLib
             cmd.CommandText = $"insert into estoques(produto_id,quantidade) values({Produto_id},{Quantidade})";
             cmd.ExecuteNonQuery();
         }
-
-    }
+        public static Estoque ObterPorId(int produto_id)
+        {
+            Estoque estoque = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from estoques where produto_id ={produto_id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                estoque = new(
+                    dr.GetInt32(0),
+                    dr.GetDouble(1),
+                    dr.GetDateTime(2)
+                    );
+            }
+            return estoque;
+        }
+    }   
 }
