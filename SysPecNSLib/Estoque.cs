@@ -68,5 +68,12 @@ namespace SysPecNSLib
             }
             return lista;
         }
+        public void Atualizar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update estoques set quantidade = {Quantidade} where produto_id = {Produto_id}";
+            cmd.ExecuteNonQuery();
+        }
     }   
 }
