@@ -65,7 +65,7 @@ namespace SysPecNSDesk
                 else
                 {
                     txtDescontoItem.Enabled = true;
-                    label4.Text = $" {produto.Valor_unit * produto.Classe_desconto}";
+                    label4.Text = "R$" + (produto.Valor_unit * produto.Classe_desconto).ToString("#0.00");
 
                 }
                 txtValorUnit.ReadOnly = true;
