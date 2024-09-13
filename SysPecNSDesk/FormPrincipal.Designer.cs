@@ -115,7 +115,8 @@
             // 
             listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             listarToolStripMenuItem.Size = new Size(180, 22);
-            listarToolStripMenuItem.Text = "&Listar";
+            listarToolStripMenuItem.Text = "&Estoque";
+            listarToolStripMenuItem.Click += listarToolStripMenuItem_Click;
             // 
             // fornecedorToolStripMenuItem
             // 
@@ -134,7 +135,7 @@
             // novoToolStripMenuItem2
             // 
             novoToolStripMenuItem2.Name = "novoToolStripMenuItem2";
-            novoToolStripMenuItem2.Size = new Size(180, 22);
+            novoToolStripMenuItem2.Size = new Size(103, 22);
             novoToolStripMenuItem2.Text = "&Novo";
             novoToolStripMenuItem2.Click += novoToolStripMenuItem2_Click;
             // 

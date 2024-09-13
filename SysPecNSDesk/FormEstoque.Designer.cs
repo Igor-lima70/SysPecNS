@@ -124,6 +124,7 @@
             btnInserir.TabIndex = 6;
             btnInserir.Text = "&Inserir";
             btnInserir.UseVisualStyleBackColor = true;
+            btnInserir.Click += btnInserir_Click;
             // 
             // btnAlterar
             // 
