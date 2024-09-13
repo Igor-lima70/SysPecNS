@@ -37,6 +37,8 @@
             clnProduto_id = new DataGridViewTextBoxColumn();
             clnQuantidade = new DataGridViewTextBoxColumn();
             clnData_Ultimo_Movimento = new DataGridViewTextBoxColumn();
+            btnInserir = new Button();
+            btnAlterar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(99, 76);
+            label2.Location = new Point(108, 64);
             label2.Name = "label2";
             label2.Size = new Size(64, 15);
             label2.TabIndex = 1;
@@ -62,7 +64,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(205, 76);
+            label3.Location = new Point(199, 64);
             label3.Name = "label3";
             label3.Size = new Size(69, 15);
             label3.TabIndex = 2;
@@ -70,16 +72,16 @@
             // 
             // txtQuantidade
             // 
-            txtQuantidade.Location = new Point(205, 94);
+            txtQuantidade.Location = new Point(199, 82);
             txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(84, 23);
+            txtQuantidade.Size = new Size(75, 23);
             txtQuantidade.TabIndex = 3;
             // 
             // txtProduto_id
             // 
-            txtProduto_id.Location = new Point(99, 94);
+            txtProduto_id.Location = new Point(108, 82);
             txtProduto_id.Name = "txtProduto_id";
-            txtProduto_id.Size = new Size(79, 23);
+            txtProduto_id.Size = new Size(75, 23);
             txtProduto_id.TabIndex = 4;
             // 
             // dgvEstoque
@@ -114,11 +116,31 @@
             clnData_Ultimo_Movimento.ReadOnly = true;
             clnData_Ultimo_Movimento.Width = 144;
             // 
+            // btnInserir
+            // 
+            btnInserir.Location = new Point(108, 128);
+            btnInserir.Name = "btnInserir";
+            btnInserir.Size = new Size(75, 30);
+            btnInserir.TabIndex = 6;
+            btnInserir.Text = "&Inserir";
+            btnInserir.UseVisualStyleBackColor = true;
+            // 
+            // btnAlterar
+            // 
+            btnAlterar.Location = new Point(199, 128);
+            btnAlterar.Name = "btnAlterar";
+            btnAlterar.Size = new Size(75, 30);
+            btnAlterar.TabIndex = 7;
+            btnAlterar.Text = "&Alterar";
+            btnAlterar.UseVisualStyleBackColor = true;
+            // 
             // FormEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(403, 450);
+            Controls.Add(btnAlterar);
+            Controls.Add(btnInserir);
             Controls.Add(dgvEstoque);
             Controls.Add(txtProduto_id);
             Controls.Add(txtQuantidade);
@@ -127,6 +149,7 @@
             Controls.Add(label1);
             Name = "FormEstoque";
             Text = "FormEstoque";
+            Load += FormEstoque_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -143,5 +166,7 @@
         private DataGridViewTextBoxColumn clnProduto_id;
         private DataGridViewTextBoxColumn clnQuantidade;
         private DataGridViewTextBoxColumn clnData_Ultimo_Movimento;
+        private Button btnInserir;
+        private Button btnAlterar;
     }
 }
