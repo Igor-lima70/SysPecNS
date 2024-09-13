@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace SysPecNSLib
 {
@@ -22,6 +23,13 @@ namespace SysPecNSLib
             Quantidade = quantidade;
             Data_Ultimo_Movimento = data_Ultimo_Movimento;
         }
-        
+        public void Inserir()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"insert into estoques(produto_id,quantidade) values({Produto_id},{Quantidade})";
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }
