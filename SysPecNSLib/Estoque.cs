@@ -51,5 +51,22 @@ namespace SysPecNSLib
             }
             return estoque;
         }
+        public static List<Estoque> ObterLista(int produto_id)
+        {
+            List<Estoque> lista = new();
+            var cmd = Banco.Abrir();
+
+            cmd.CommandText = $"select * from estoques where produto_id = {produto_id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new(
+                    dr.GetInt32(0),
+                    dr.GetDouble(1),
+                    dr.GetDateTime(2)
+                    ));
+            }
+            return lista;
+        }
     }   
 }
