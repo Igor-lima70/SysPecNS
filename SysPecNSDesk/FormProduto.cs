@@ -56,7 +56,7 @@ namespace SysPecNSDesk
                 double.Parse(txtValorUnit.Text),
                 txtUnidVenda.Text,
                 Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
-                (int)npEstoqMin.Value, double.Parse(txtDescricao.Text)
+                (int)npEstoqMin.Value, double.Parse(txtDesconto.Text)
 
                 );
             produto.Inserir();
@@ -107,7 +107,7 @@ namespace SysPecNSDesk
                 txtUnidVenda.Text, Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
                 (double)npEstoqMin.Value,
                 double.Parse(txtDesconto.Text)
-                 
+
                     );
             produto.Atualizar();
             MessageBox.Show($"Produto {produto.Id} - {produto.Descricao} atualizado com sucesso");
@@ -124,6 +124,11 @@ namespace SysPecNSDesk
             txtUnidVenda.Clear();
             txtDescricao.Clear();
             txtDesconto.Clear();
+        }
+
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

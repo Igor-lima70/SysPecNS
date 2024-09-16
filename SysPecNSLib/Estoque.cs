@@ -39,7 +39,7 @@ namespace SysPecNSLib
         {
             Estoque estoque = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * from estoques where produto_id ={produto_id}";
+            cmd.CommandText = $"select * from estoques where produto_id = {produto_id}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -51,13 +51,12 @@ namespace SysPecNSLib
             }
             return estoque;
         }
-        public static List<Estoque> ObterLista(int produto_id)
+        public static List<Estoque> ObterLista(string produto_id)
         {
             List<Estoque> lista = new();
             var cmd = Banco.Abrir();
-
-            cmd.CommandText = $"select * from estoques where produto_id = {produto_id}";
-            var dr = cmd.ExecuteReader();
+            cmd.CommandText = $"select * from estoques";
+            var dr = cmd.ExecuteReader(); 
             while (dr.Read())
             {
                 lista.Add(new(

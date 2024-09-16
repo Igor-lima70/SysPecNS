@@ -25,18 +25,23 @@ namespace SysPecNSDesk
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Estoque estoque = new(
-                int.Parse(txtProduto_id.Text),
-                double.Parse(txtQuantidade.Text)
-                );
-            estoque.Inserir();
-            if(estoque.Produto_id > 0)
+            
+            if (double.Parse(txtQuantidade.Text) <= 0)
             {
-                MessageBox.Show($"Estoque gravado com sucesso");
+                MessageBox.Show("Não é possível inserir essa quatidade");
+            }
+            else if(double.Parse(txtQuantidade.Text) > 0)
+            {
+                Estoque estoque = new(
+                    int.Parse(txtProduto_id.Text),
+                    double.Parse(txtQuantidade.Text)
+                    );
+                estoque.Atualizar();
+                MessageBox.Show("Estoque gravado com sucesso");
                 FormEstoque_Load(sender, e);
             }
         }
-        private void CarregaGrid(int produto_id)
+        private void CarregaGrid(string produto_id = "")
         {
             var lista = Estoque.ObterLista(produto_id);
             dgvEstoque.Rows.Clear();
@@ -46,8 +51,32 @@ namespace SysPecNSDesk
                 dgvEstoque.Rows.Add();
                 dgvEstoque.Rows[cont].Cells[0].Value = estoque.Produto_id;
                 dgvEstoque.Rows[cont].Cells[1].Value = estoque.Quantidade;
+                dgvEstoque.Rows[cont].Cells[2].Value = estoque.Data_Ultimo_Movimento;
                 cont++;
             }
+        }
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            
+            if (double.Parse(txtQuantidade.Text) <= 0)
+            {
+                MessageBox.Show("Não é possível inserir essa quatidade");
+            }
+            else if (double.Parse(txtQuantidade.Text) > 0)
+            {
+                Estoque estoque = new(
+                    int.Parse(txtProduto_id.Text),
+                    double.Parse(txtQuantidade.Text)
+                    );
+                estoque.Atualizar();
+                MessageBox.Show("Estoque gravado com sucesso");
+                FormEstoque_Load(sender, e);
+            }
+        }
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+            FormEstoqProd formEstoqProd = new();
+            formEstoqProd.ShowDialog();
         }
     }
 }

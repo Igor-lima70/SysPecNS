@@ -77,24 +77,29 @@ namespace SysPecNSDesk
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            ItemPedido item = new(
-                int.Parse(txtIdPedido.Text),
-                produto,
-                produto.Valor_unit,
-                double.Parse(txtQuant.Text),
-                double.Parse(txtDescontoItem.Text)
-                );
-            item.Inserir();
-            produto = new();
-            txtDescontoItem.Text = "0";
-            txtDescricao.Clear();
-            txtValorUnit.Text = "0";
-            txtQuant.Text = "1";
-            txtCodbarras.Clear();
-            txtCodbarras.Focus();
-
-            PreencherGridItens();
-
+            if (double.Parse(txtQuant.Text) <= 0)
+            {
+                MessageBox.Show("Não é possível inserir essa quatidade");
+            }
+            else if (double.Parse(txtQuant.Text) > 0)
+            {
+                ItemPedido item = new(
+                    int.Parse(txtIdPedido.Text),
+                    produto,
+                    produto.Valor_unit,
+                    double.Parse(txtQuant.Text),
+                    double.Parse(txtDescontoItem.Text)
+                    );
+                item.Inserir();
+                produto = new();
+                txtDescontoItem.Text = "0";
+                txtDescricao.Clear();
+                txtValorUnit.Text = "0";
+                txtQuant.Text = "1";
+                txtCodbarras.Clear();
+                txtCodbarras.Focus();
+                PreencherGridItens();
+            }
         }
         private void PreencherGridItens()
         {

@@ -267,6 +267,7 @@
             dgvProdutos.RowHeadersVisible = false;
             dgvProdutos.Size = new Size(643, 206);
             dgvProdutos.TabIndex = 1;
+            dgvProdutos.CellContentClick += dgvProdutos_CellContentClick;
             // 
             // Column1
             // 
